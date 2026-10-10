@@ -1,0 +1,8 @@
+[build]
+command = "npm ci && npm run build"
+publish = "dist"
+
+[build.environment]
+# Builds the server side of the app for Netlify. Without it the build targets
+# Cloudflare's format instead and the site's analysis calls never start.
+NITRO_PRESET = "netlify"
